@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <title>Moustique</title>
+</head>
+<!-- <body onload="startGame()"> -->
+<body>
+
+    <div id="canvascontainer">
+        <canvas id="canvas"></canvas>
+        
+    </div>
+    <div id="best-score-label">Best score :</div>
+    <div class="button-container">
+        <button class="button">z</button>
+    </div>
+    <div class="button-container">    
+        <button class="button">q</button>
+        <button class="button">s</button>
+        <button class="button">d</button>
+    </div>
+    <div class="button-container">
+        <button class="button">Space</button>
+    </div>
+    <figure>
+        <figcaption class="music-label">Listen to: Gurvan</figcaption>
+        <audio class="music-player"
+            controls
+            src="../data/game_music_gurvan.mp3">
+        </audio>
+    </figure>
+    <div>
+        <button id="restartbutton" onclick="startGame()">start</button>
+    </div>
+    
+
+
+    <script src="../frontJS/modules/mosquito.js"></script>
+    <script src="../frontJS/modules/buidings.js"></script>
+    <script src="../frontJS/modules/gameRules.js"></script>
+    <script src="../frontJS/gameV3.js"></script>
+</body>
+</html>

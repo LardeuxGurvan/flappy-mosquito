@@ -1,0 +1,70 @@
+body {
+    background-color: rgb(30, 21, 34);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 11px 8px rgba(0,0,0,0.72);
+    background-image: url("../data/background.png");
+    border: solid 3px rgb(80, 65, 107);
+    height: 600px;
+    width: 800px;
+
+}
+
+#best-score-label {
+    color: rgb(255, 200, 0);
+    right: 50px;
+    font-size: 2rem;
+    margin: 20px;
+    text-shadow: 10px 5px 5px rgba(0, 0, 0, 0.719);
+
+}
+
+#restartbutton {
+    display:none;
+    color: rgb(255, 200, 0);
+    padding: 10px 40px ;
+    margin: 82px;
+    font-size: 2rem;
+    border-radius: 20px;
+    background-color: rgb(117, 0, 0);
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.61);
+    
+
+}
+
+.button-container {
+    width: 250px;
+    margin: 0 20px 0;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 0px 11px 8px rgba(0,0,0,0.72);
+    
+    padding: 10px;
+    
+
+}
+
+.button {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 0 5px;
+
+}
+
+.music-label {
+    padding: 35px;
+    font-size: 1rem;
+    color: whitesmoke;
+}
+
+.music-player {
+    width: 270px;
+    margin: 20px;
+    
+}
