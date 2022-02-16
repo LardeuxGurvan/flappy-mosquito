@@ -1,12 +1,12 @@
-# Flappy-Mosquito
+# Mosquito's night
 
 
 ## Resume
 
-Inspired by flappy bird,  this is a little game
-made for practice and test canvas.
+Inspired by flappy bird, it is a little game
+for practice and test canvas.
 
-![mosiquito logo](./data/moumou.png "Moustique")
+![mosiquito logo](./data/mosquito.png "Moustique")
 [try it](https://lardeuxgurvan.github.io/flappy-mosquito/)
 
 **_Desktop only!_**
