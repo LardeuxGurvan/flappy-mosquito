@@ -28,12 +28,13 @@ let scoreColor = "darkred";
 let scoreFont = '30px Consolas';
 let inRoom = false;
 let bestScoreElement = document.getElementById('best-score-label');
-let restartButtonElement = document.getElementById("restartbutton");
-const music = new Audio('../data/game_music_gurvan.mp3');
+const restartButtonElement = document.getElementById("restartbutton");
+const menuElement = document.querySelector('.game-container-aside');
+const music = new Audio('./data/game_music_gurvan.mp3');
 
 
 const background = new Image();
-background.src = "../data/background_som.png";
+background.src = "./data/background_som.png";
 
 const BG = {
     x1:0,
@@ -74,7 +75,8 @@ stop = function() {
 };
 
 function startGame() {
-    restartButtonElement.style.display = "none"
+    menuElement.style.display = "none";
+    // restartButtonElement.style.display = "none"
     stop();
     clear();
     mosquito.reset();
@@ -84,7 +86,7 @@ function startGame() {
 }
 
 const crash = new Image();
-crash.src = "../data/encoreunboum.png";
+crash.src = "./data/encoreunboum.png";
 
 function crashWith() {
     for(let i = 0; i < buildingsArray.length; i++){
@@ -97,17 +99,17 @@ function crashWith() {
                         return
                     }else{
                         ctx.drawImage(crash, mosquito.x-mosquito.height,mosquito.y-mosquito.width, 80, 80);
-                        ctx.font = "23px Consolas";
-                        ctx.fillStyle = 'white';
-                        ctx.fillText("When the moustique's over ...", 265, 100);
+                        ctx.font = "23px system-ui";
+                        ctx.fillStyle = '#b1bdc6';
+                        ctx.fillText("Game over ", 345, 100);
                         return true;
                     }
             }
     }
     if(score <= 0){
         ctx.drawImage(crash, mosquito.x-mosquito.height,mosquito.y-mosquito.width, 80, 80);
-                        ctx.font = "23px Consolas";
-                        ctx.fillStyle = 'white';
+                        ctx.font = "23px system-ui";
+                        ctx.fillStyle = '#b1bdc6';
                         ctx.fillText("No more blood ...", 320, 100);
                         return true;
     }
@@ -138,7 +140,7 @@ function countAndDisplayScore() {
         }
         else if(mosquito.x > buildingsArray[i].x && (mosquito.x + mosquito.width) < (buildingsArray[i].x + buildingsArray[i].width) && buildingsArray[i].light < 3 && canvas.keys && !canvas.keys[32]){
             scoreColor = "rgb(255, 200, 0)";
-            scoreFont = '50px Consolas';
+            scoreFont = '40px Consolas';
             score += 2;
             
         }
@@ -164,23 +166,25 @@ function animate() {
     handleBackground();
     
     scoreColor = "darkred"
-    scoreFont = '30px Consolas';
+    scoreFont = '30px system-ui';
     countAndDisplayScore();
     mosquito.update();
     mosquito.draw();
     handleBuildings();
     ctx.fillStyle = scoreColor;
     ctx.font = scoreFont;
-    ctx.strokeText(score, (canvas.width/2)-15, 40);
-    ctx.fillText(score, (canvas.width/2)-15, 40);
+    ctx.strokeText(score, (canvas.width/2)-27, 40);
+    ctx.fillText(score, (canvas.width/2)-27, 40);
     crashWith();
     if(crashWith()){
         if(bestScore<score){;
             bestScore = score
             bestScoreElement.innerHTML = `Best score : ${bestScore.toString()}`;
+            menuElement.style.display = "block";
             restartButtonElement.style.display = "block";
             return
         }else{
+            menuElement.style.display = "block";
             restartButtonElement.style.display = "block";
             return;
         }
@@ -190,14 +194,11 @@ function animate() {
     frame++;
 }
 
-// music.play();
 
-window.onload = function() {
-    animate(); 
- 
-};
-
-
+document.addEventListener('DOMContentLoaded', () =>{
+    // startGame();
+    music.play();
+});
 
 
 

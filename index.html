@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html data-theme="dark"  lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <!-- <link rel="stylesheet" href="./css/reset.css"> -->
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <link rel="stylesheet" href="./css/stylePico.css">
+    
+    <title>Moustique</title>
+</head>
+<!-- <body onload="startGame()"> -->
+<body >
+    <main class="container-fluid">
+        <div class="game-container">
+        <aside class="game-container-aside">
+            
+            <div class="grid">
+                <button class="button-top">z</button>
+            </div>
+            <div class="grid">    
+                <button class="button">q</button>
+                <button class="button">s</button>
+                <button class="button">d</button>
+            </div>
+            <div class="button-container">
+                <button class="button">Space</button>
+            </div>
+            <div>
+                <button id="restartbutton" onclick="startGame()">Start</button>
+            </div>
+
+            
+        </aside>
+        <div role="document">
+            <canvas id="canvas"></canvas>
+        </div>
+        <div class="container title"><h1>Mosquito's night</h1></div>
+        <figure class="music-player-container">
+            <audio class="music-player"
+                controls
+                src="./data/game_music_gurvan.mp3">
+            </audio>
+            <nav id="best-score-label">Best score :</nav>
+        </figure>
+    </div>
+</main>
+
+    <script src="./frontJS/modules/mosquito.js"></script>
+    <script src="./frontJS/modules/buidings.js"></script>
+    <script src="./frontJS/gameV3.js"></script>
+</body>
+</html>
