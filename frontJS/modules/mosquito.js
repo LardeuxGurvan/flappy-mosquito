@@ -1,9 +1,9 @@
 // classe pour le plan et les variables du joueur
 const mosquitoSprite = new Image();
-mosquitoSprite.src = "../data/moumou.png";
+mosquitoSprite.src = "./data/moumou.png";
 
 const shield = new Image();
-shield.src = "../data/noir.png";
+shield.src = "./data/noir.png";
 
 
 class Mosquito {
@@ -18,9 +18,11 @@ class Mosquito {
     }
     draw(){
         // Rendu du joueur
-        /* ctx.fillStyle = "white"; */
+        // ctx.fillStyle = "white";
 
-        /* ctx.fillRect(this.x, this.y, this.width, this.height); */
+        // ctx.fillRect(this.x, this.y, this.width, this.height);
+        // ctx.arc(this.x, this.y, this.width, 0, 2 * Math.PI);
+        ctx.fill();
         ctx.drawImage(mosquitoSprite, mosquito.x - 7,mosquito.y - 10, 40, 40);
     }
     update(){
@@ -28,6 +30,7 @@ class Mosquito {
         mosquito.speedX = 0;
         mosquito.speedY = 0; 
         playerSpeed = 3;
+        
         // je définit les limites de déplacement du joueur
 
         if (this.y > canvas.height - (this.height * 2)){
