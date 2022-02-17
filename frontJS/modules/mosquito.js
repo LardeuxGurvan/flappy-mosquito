@@ -23,12 +23,12 @@ class Mosquito {
         // ctx.fillRect(this.x, this.y, this.width, this.height);
         // ctx.arc(this.x, this.y, this.width, 0, 2 * Math.PI);
         ctx.fill();
-        ctx.drawImage(mosquitoSprite, mosquito.x - 7,mosquito.y - 10, 40, 40);
+        ctx.drawImage(mosquitoSprite, this.x - 7,this.y - 10, 40, 40);
     }
     update(){
         let fly = Math.sin(float);
-        mosquito.speedX = 0;
-        mosquito.speedY = 0; 
+        this.speedX = 0;
+        this.speedY = 0; 
         playerSpeed = 3;
         
         // je définit les limites de déplacement du joueur
