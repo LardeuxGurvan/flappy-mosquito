@@ -4,7 +4,7 @@
 
 
 
-// Constantes
+// Récupération et configuration du canvas
 const canvas = document.getElementById('canvas');// Recupération de la surface et du contexte
 const ctx = canvas.getContext('2d');
 canvas.width = 800;
